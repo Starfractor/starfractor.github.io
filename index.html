@@ -1,199 +1,51 @@
+\index.html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starfractor's Homepage</title>
-    <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Styling the body */
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Navbar styling */
-        nav {
-            background-color: #333;
-            padding: 10px 20px;
-            position: fixed;
-            /* Sticks the navbar to the top */
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            /* Ensures it's on top of other content */
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        nav ul li a:hover {
-            color: #f0a500;
-        }
-
-        /* Add smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Add some padding to the page content */
-        .content {
-            padding: 80px 20px;
-            /* Space at the top to avoid content being hidden under navbar */
-        }
-
-        /* Sections with IDs to link to the navbar */
-        section {
-            margin: 50px 0;
-        }
-
-        /* Add some height for demonstration */
-        section {
-            padding: 40px;
-        }
-
-        /* Home section styling */
-        #home {
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        /* Style for subtitle text in the Home section */
-        #home p.subtitle {
-            font-size: 24px;
-            color: #333;
-            margin-top: 20px;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-        }
-
-        /* Image styling for the home section */
-        #home img {
-            margin-top: 20px;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            /* Makes the image circular */
-            object-fit: cover;
-            /* Ensures the image fits properly */
-        }
-
-        /* Social buttons section */
-        #home .social-buttons {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        /* Styling individual social buttons */
-        #home .social-buttons a {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        /* Styling for the images inside buttons */
-        #home .social-buttons img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Page Content -->
     <div class="content">
         <!-- Home Section -->
-        <section id="home">
+        <section class="home-section">
             <h1>Nicholas King</h1>
-            <img src="Nicholas_King_Profile.jpg" alt="Nicholas_King_Profile">
-            <p class="subtitle">Machine Learning | Software Engineering | Researcher</p>
+            <img src="img/Nicholas_King_Profile.jpg" alt="Nicholas King Profile">
+            <p class="subtitle">Machine Learning | Software Engineering | Research</p>
 
             <!-- Social Media Buttons -->
             <div class="social-buttons">
                 <a href="https://www.linkedin.com/in/ncking/" target="_blank">
-                    <img src="linkedin_logo.png" alt="LinkedIn">
+                    <img src="img/linkedin_logo.png" alt="LinkedIn">
                 </a>
                 <a href="https://github.com/Starfractor" target="_blank">
-                    <img src="github_logo.png" alt="GitHub">
+                    <img src="img/github_logo.png" alt="GitHub">
                 </a>
                 <a href="https://www.wyzant.com/Tutors/nicholck" target="_blank">
-                    <img src="wyzant_logo.png" alt="Wyzant">
+                    <img src="img/wyzant_logo.png" alt="Wyzant">
                 </a>
                 <a href="mailto:nicholck.king@gmail.com">
-                    <img src="email_logo.png" alt="Email">
+                    <img src="img/email_logo.png" alt="Email">
                 </a>
             </div>
         </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>This is the section where you describe yourself.</p>
-        </section>
-
-        <!-- Resume Section -->
-        <section id="resume">
-            <h2>Resume</h2>
-            <p>Include details about your work experience and education here.</p>
-        </section>
-
-        <!-- Research Section -->
-        <section id="research">
-            <h2>Research</h2>
-            <p>Provide information about your research interests and publications.</p>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Highlight some of the projects you've worked on here.</p>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Provide ways for people to get in touch with you.</p>
-        </section>
     </div>
-
 </body>
-
 </html>
