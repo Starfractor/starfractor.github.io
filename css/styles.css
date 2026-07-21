@@ -245,22 +245,20 @@ section[id] {
     justify-content: center;
     width: clamp(2.75rem, 5vw, 4.5rem);
     height: clamp(2.75rem, 5vw, 4.5rem);
-    border-radius: var(--radius-md);
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    transition: transform 0.25s var(--ease-out), border-color 0.25s ease, box-shadow 0.25s ease;
+    border: none;
+    background: none;
+    transition: transform 0.25s var(--ease-out), opacity 0.25s ease;
 }
 
 .social-buttons a:hover {
     transform: translateY(clamp(-1px, -0.2vw, -2px));
-    border-color: var(--rule-strong);
-    box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(8px, 1.5vw, 12px) rgba(0, 0, 0, 0.06);
+    opacity: 0.8;
     text-decoration: none;
 }
 
 .social-buttons img {
-    width: 55%;
-    height: 55%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     display: block;
 }
@@ -564,21 +562,14 @@ section[id] {
 
 /* Contact */
 .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.85rem, 1.5vw, 1.25rem);
     margin-top: var(--space-lg);
 }
 
 .contact-item {
-    padding: clamp(0.65rem, 1.5vw, 1rem) 0;
-    border-bottom: 1px solid var(--rule);
-    transition: padding-left 0.25s var(--ease-out);
-}
-
-.contact-item:first-child {
-    border-top: 1px solid var(--rule);
-}
-
-.contact-item:hover {
-    padding-left: clamp(0.2rem, 0.5vw, 0.4rem);
+    padding: 0;
 }
 
 .contact-item strong {
@@ -589,7 +580,7 @@ section[id] {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 0.15em;
+    margin-bottom: 0.25em;
 }
 
 .contact-item a {
