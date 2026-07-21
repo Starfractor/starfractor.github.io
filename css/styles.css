@@ -528,24 +528,9 @@ section[id] {
     color: var(--rule-strong);
 }
 
-/* Tutoring intro with session details */
-.tutoring-intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: clamp(1rem, 3vw, 2rem);
-    margin-bottom: var(--space-md);
-}
-
-.tutoring-intro > p {
-    flex: 1;
-    min-width: 0;
-    margin-bottom: 0;
-}
-
 .tutoring-details {
-    flex: 0 1 clamp(14rem, 28vw, 22rem);
-    margin: 0;
+    width: 100%;
+    max-width: none;
 }
 
 .tutoring-details h3 {
@@ -560,6 +545,10 @@ section[id] {
     padding: clamp(1rem, 2vw, 1.5rem) clamp(1.1rem, 2.5vw, 1.75rem);
     margin: var(--space-lg) 0;
     animation: fadeUp 0.5s var(--ease-out) 0.15s both;
+}
+
+.highlight-box.tutoring-details {
+    margin: var(--space-md) 0 var(--space-lg);
 }
 
 .highlight-box h3 {
@@ -706,17 +695,6 @@ a:hover {
     }
 
     .project-image {
-        flex: none;
-        width: 100%;
-        max-width: none;
-    }
-
-    .tutoring-intro {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .tutoring-details {
         flex: none;
         width: 100%;
         max-width: none;
