@@ -3,51 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Starfractor's Homepage</title>
+    <title>Projects - Nicholas King</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav>
+        <p class="site-name"><a href="index.html">Nicholas King</a></p>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
             <li><a href="resume.html">Resume</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="tutoring.html">Tutoring</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Page Content -->
     <div class="content">
-        <!-- Projects Section -->
         <section class="page-section">
             <h2>Projects</h2>
 
-            <div class="project-item">
-                <h3>BiomechAI</h3>
-                <p>Description of the project, including technologies used, your role, and outcomes.</p>
-                <p><a href="#" target="_blank">View Project</a> | <a href="#" target="_blank">GitHub Repository</a></p>
+            <div class="entry-card project-entry">
+                <div class="project-content">
+                    <h4>SINDyffuse</h4>
+                    <p class="entry-links">
+                        <a href="https://github.com/Rose-STL-Lab/SINDyffuse" target="_blank" rel="noopener noreferrer">Code</a>
+                    </p>
+                    <p>Text-conditioned human motion diffusion with sparse SINDy biomechanical models and OpenSim physics penalties.</p>
+                    <ul>
+                        <li>Trained on 14,000+ HumanML3D motion-text pairs, retargeted to Rajagopal musculoskeletal models, achieving 70% higher fidelity compared to state-of-the-art human motion models.</li>
+                        <li>Matched full physics-simulator-guided diffusion on biomechanical plausibility within 5% while running inference over 10× faster than online OpenSim guidance and within 15% of unguided baseline latency.</li>
+                    </ul>
+                </div>
+                <div class="project-image">
+                    <img src="img/sindyffuse.png" alt="SINDyffuse">
+                </div>
             </div>
 
-            <div class="project-item">
-                <h3>PG-BIG</h3>
-                <p>Description of the project, including technologies used, your role, and outcomes.</p>
-                <p><a href="#" target="_blank">View Project</a> | <a href="#" target="_blank">GitHub Repository</a></p>
-            </div>
-            
-            <div class="project-item">
-                <h3>BIGE: Biomechanics-informed GenAI for Exercise Science</h3>
-                <p>BIGE is a clinician-guided framework for generative motion modeling that combines biomechanically meaningful scoring with a differentiable surrogate model of muscle activation to optimize latent samples under constraints such as pelvic tilt, angular velocity, center-of-mass dynamics, and vastus medialis activation ranges; on squat data, this targeted guidance produces more realistic, diverse, and physiologically valid motions than prior baselines, including deeper squats with fewer artifacts and improved temporal segmentation using joint angular-velocity peaks.</p>
-            </div>
-            
-            <div class="project-item">
-                <h3>HITS-SDO</h3>
-                <p>Description of the project, including technologies used, your role, and outcomes.</p>
-                <p><a href="#" target="_blank">View Project</a> | <a href="#" target="_blank">GitHub Repository</a></p>
+            <div class="entry-card project-entry">
+                <div class="project-content">
+                    <h4>PG-BIG: Personalized Guidance for Biomechanically Informed GenAI</h4>
+                    <p class="entry-meta">L4DC 2026</p>
+                    <p class="entry-links">
+                        <a href="https://proceedings.mlr.press/v331/king26a.html" target="_blank" rel="noopener noreferrer">Paper</a>
+                        <a href="https://github.com/Rose-STL-Lab/PG-BIG" target="_blank" rel="noopener noreferrer">Code</a>
+                    </p>
+                    <p>Biomechanically informed motion generation pipeline that personalizes motions of athletes given an action prompt using a conditioned VQ-VAE model, guided by clinician-defined constraints via the OpenSim library.</p>
+                    <ul>
+                        <li>Evaluated on 5,000+ trials from 183 athletes across 30 tasks; improved realism metrics by over 80% compared to state-of-the-art baselines.</li>
+                        <li>Achieved over 95% accuracy in classifying athlete generated-motion embeddings.</li>
+                    </ul>
+                </div>
+                <div class="project-image">
+                    <img src="img/pg-big.png" alt="PG-BIG">
+                </div>
             </div>
         </section>
     </div>

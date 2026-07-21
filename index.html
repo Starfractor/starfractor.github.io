@@ -1,62 +1,84 @@
-\index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starfractor's Homepage</title>
+    <title>Nicholas King</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav>
+        <p class="site-name"><a href="index.html">Nicholas King</a></p>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="resume.html">Resume</a></li>
-            <li><a href="research.html">Research</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="tutoring.html">Tutoring</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Page Content -->
     <div class="content">
-        <!-- Home Section -->
         <section class="home-section">
-            <h1>Nicholas King</h1>
-            <img src="img/Nicholas_King_Profile.jpg" alt="Nicholas King Profile">
-            <p class="subtitle">Machine Learning | Software Engineering | Research</p>
+            <div class="hero-inner">
+                <img src="img/profile_photo.jpg" alt="Profile photo">
+                <div class="hero-text">
+                    <h1>Nicholas King</h1>
 
-            <!-- Social Media Buttons -->
-            <div class="social-buttons">
-                <a href="https://www.linkedin.com/in/ncking/" target="_blank">
-                    <img src="img/linkedin_logo.png" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/Starfractor" target="_blank">
-                    <img src="img/github_logo.png" alt="GitHub">
-                </a>
-                <a href="https://www.wyzant.com/Tutors/nicholck" target="_blank">
-                    <img src="img/wyzant_logo.png" alt="Wyzant">
-                </a>
-                <a href="mailto:nicholck.king@gmail.com">
-                    <img src="img/email_logo.png" alt="Email">
-                </a>
+                    <div class="social-buttons">
+                        <a href="https://www.linkedin.com/in/ncking/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/linkedin_logo.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/Starfractor" target="_blank" rel="noopener noreferrer">
+                            <img src="img/github_logo.png" alt="GitHub">
+                        </a>
+                        <a href="https://www.wyzant.com/Tutors/nicholck" target="_blank" rel="noopener noreferrer">
+                            <img src="img/wyzant_logo.png" alt="Wyzant">
+                        </a>
+                        <a href="mailto:nicholck.king@gmail.com">
+                            <img src="img/email_logo.png" alt="Email">
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="about" class="page-section">
             <h2>About Me</h2>
-            <p>This is the section where you describe yourself. You can include information about your background, education, interests, and career goals.</p>
-            <p>Consider adding:</p>
+            <p>
+                Hello! I'm Nicholas King, a graduate student pursuing an M.S. in Computer Science at the
+                University of California, San Diego, with a specialization in Artificial Intelligence. I work
+                in the Rose STL Lab, where I focus on generative models and deep learning for scientific
+                applications—particularly biomechanically informed human motion modeling in collaboration with
+                the Wu Tsai Human Performance Alliance.
+            </p>
+            <p>
+                My research has led to multiple first-author and co-authored publications accepted to top
+                machine learning conferences including NeurIPS, AAAI, ICLR, and L4DC. I have also worked as a
+                Software Engineer Intern at Western Digital, where I specialized in firmware performance
+                optimization for hard disk drives.
+            </p>
+            <p>
+                Beyond research, I have spent the past six years tutoring in artificial intelligence, computer
+                programming, mathematics, and other STEM fields, and I serve as a research mentor for university
+                students. Teaching is something I am deeply passionate about—as a first-generation college
+                student, I know how impactful the right guidance can be. I believe anyone with the right mindset
+                and habits can achieve their goals, and I tailor my approach to each student's learning style,
+                breaking complex topics into clear, digestible steps.
+            </p>
+            <p>
+                I'm always open to connecting about research, industry trends, academic pursuits, or tutoring.
+                Feel free to reach out!
+            </p>
+        </section>
+
+        <section class="page-section">
+            <h2>Research Interests</h2>
             <ul>
-                <li>Your professional background</li>
-                <li>Your technical skills and expertise</li>
-                <li>Your academic history</li>
-                <li>Personal interests or hobbies</li>
-                <li>Your approach to problem-solving</li>
+                <li>Generative models for human motion</li>
+                <li>Biomechanically informed AI</li>
+                <li>Machine learning for scientific applications (geology, astronomy, exercise science)</li>
             </ul>
         </section>
     </div>

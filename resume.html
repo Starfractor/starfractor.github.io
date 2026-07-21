@@ -3,57 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Starfractor's Homepage</title>
+    <title>Resume - Nicholas King</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav>
+        <p class="site-name"><a href="index.html">Nicholas King</a></p>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="research.html">Research</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="tutoring.html">Tutoring</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Page Content -->
     <div class="content">
-        <!-- Resume Section -->
         <section class="page-section">
             <h2>Resume</h2>
-            
+
+            <h3>Education</h3>
+
+            <div class="entry-card">
+                <div class="entry-header">
+                    <div class="entry-title">
+                        <h4>University of California, San Diego</h4>
+                        <p class="entry-gpa">GPA: 3.957</p>
+                    </div>
+                    <p class="entry-date">June 2026</p>
+                </div>
+                <p class="entry-degree">M.S. Computer Science (Thesis), Specialization: Artificial Intelligence</p>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-header">
+                    <div class="entry-title">
+                        <h4>University of California, Irvine</h4>
+                        <p class="entry-gpa">GPA: 3.938</p>
+                    </div>
+                    <p class="entry-date">June 2024</p>
+                </div>
+                <p class="entry-degree">B.S. Computer Science, Specialization: Intelligent Systems</p>
+                <p class="entry-org">Honors: Regents' Scholar; ICS Honors Program; Campuswide Honors Collegium</p>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-header">
+                    <div class="entry-title">
+                        <h4>Saddleback College</h4>
+                        <p class="entry-gpa">GPA: 4.0</p>
+                    </div>
+                    <p class="entry-date">May 2022</p>
+                </div>
+                <p class="entry-degree">A.S. Computer Science</p>
+                <p class="entry-degree">A.A. Mathematics</p>
+                <p class="entry-degree">A.A. Economics</p>
+                <p class="entry-org">Honors: Honors Program; Phi Theta Kappa Honors Society</p>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-header">
+                    <div class="entry-title">
+                        <h4>Irvine Valley College</h4>
+                        <p class="entry-gpa">GPA: 4.0</p>
+                    </div>
+                    <p class="entry-date">December 2021</p>
+                </div>
+                <p class="entry-degree">A.S. Mathematics</p>
+                <p class="entry-org">Honors: Summa Cum Laude</p>
+            </div>
+
             <h3>Experience</h3>
-            <div class="experience-item">
-                <h4>Job Title - Company Name</h4>
-                <p class="date">Month Year - Present</p>
+
+            <div class="entry-card">
+                <div class="entry-header">
+                    <h4>Graduate Student Researcher</h4>
+                    <p class="entry-date">Jan 2025 – Jun 2026</p>
+                </div>
+                <p class="entry-org">University of California, San Diego · Rose STL Lab, in collaboration with the Wu Tsai Human Performance Alliance</p>
                 <ul>
-                    <li>Accomplishment or responsibility 1</li>
-                    <li>Accomplishment or responsibility 2</li>
-                    <li>Accomplishment or responsibility 3</li>
+                    <li>Led biomechanical AI research, producing 2 first-author papers alongside 2 co-authored publications in top ML conferences such as ICLR, AAAI, and L4DC.</li>
+                    <li>Developed and maintained the lab's scalable data preprocessing pipeline, retargeting 3D motion points to high-fidelity musculoskeletal models across 50,000+ motion-text pairs.</li>
+                    <li>Designed distributed training and inference pipelines on Kubernetes clusters, optimizing data loading, model sharding, and batch inference to reduce end-to-end experiment runtime by 63%.</li>
                 </ul>
             </div>
-            
-            <h3>Education</h3>
-            <div class="education-item">
-                <h4>Degree - University Name</h4>
-                <p class="date">Year - Year</p>
-                <p>Relevant coursework, honors, etc.</p>
+
+            <div class="entry-card">
+                <div class="entry-header">
+                    <h4>Software Engineer Intern</h4>
+                    <p class="entry-date">Jul 2024 – Sep 2024</p>
+                </div>
+                <p class="entry-org">Western Digital · San Jose, California</p>
+                <ul>
+                    <li>Led a 12-week internship project to enhance test reliability performance by designing a comprehensive research plan focused on algorithmic improvements.</li>
+                    <li>Developed a novel algorithm that reduces training time for reliability assessments by over 88%, utilizing weighted sorting to prioritize underutilized memory blocks.</li>
+                    <li>Integrated the new algorithm and associated tests into test suites, reducing HDD firmware testing time by over 10%.</li>
+                </ul>
             </div>
-            
+
+            <div class="entry-card">
+                <div class="entry-header">
+                    <h4>Software Engineer Co-op</h4>
+                    <p class="entry-date">Dec 2023 – Jun 2024</p>
+                </div>
+                <p class="entry-org">Western Digital · Irvine, California</p>
+                <ul>
+                    <li>Conducted weekly triage cases to resolve customer-reported performance degradation issues.</li>
+                    <li>Developed unit tests for newly implemented fixes, collaborating with various teams to uphold company standards.</li>
+                    <li>Performed code reviews focused on functionality and test accuracy, along with providing detailed feedback to ensure changes meet required standards.</li>
+                </ul>
+            </div>
+
+            <div class="entry-card">
+                <div class="entry-header">
+                    <h4>Software Engineer Intern</h4>
+                    <p class="entry-date">Aug 2023 – Dec 2023</p>
+                </div>
+                <p class="entry-org">Western Digital · Irvine, California</p>
+                <ul>
+                    <li>Contributed to the Performance and Power team, developing an internship project to optimize the firmware's power consumption for enterprise HDDs.</li>
+                    <li>Improved the head seek algorithm for read and write workloads, resulting in a 7% reduction in power consumption across standardized tests.</li>
+                    <li>Presented my project and results to firmware leaders within Western Digital to promote the integration of my project into production.</li>
+                </ul>
+            </div>
+
             <h3>Skills</h3>
-            <ul class="skills-list">
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-                <li>Skill 3</li>
-                <li>Skill 4</li>
-            </ul>
-            
-            <p><a href="docs/resume.pdf" target="_blank">Download Resume PDF</a></p>
+
+            <div class="skill-group">
+                <h4>AI / ML</h4>
+                <ul class="skill-tags">
+                    <li>PyTorch</li>
+                    <li>Hugging Face</li>
+                    <li>JAX</li>
+                    <li>PyTorch Lightning</li>
+                    <li>CUDA</li>
+                    <li>TensorFlow</li>
+                    <li>OpenSim</li>
+                    <li>MuJoCo</li>
+                </ul>
+            </div>
+
+            <div class="skill-group">
+                <h4>Systems &amp; Infrastructure</h4>
+                <ul class="skill-tags">
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                    <li>Ray</li>
+                    <li>AWS</li>
+                    <li>Weights &amp; Biases</li>
+                    <li>MLflow</li>
+                    <li>Jenkins</li>
+                </ul>
+            </div>
+
+            <div class="skill-group">
+                <h4>Languages &amp; Tools</h4>
+                <ul class="skill-tags">
+                    <li>Python</li>
+                    <li>C/C++</li>
+                    <li>C#</li>
+                    <li>SQL</li>
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>Git</li>
+                    <li>LaTeX</li>
+                    <li>Jira</li>
+                    <li>Agile Development</li>
+                </ul>
+            </div>
         </section>
     </div>
 </body>
