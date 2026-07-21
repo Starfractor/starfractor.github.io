@@ -528,6 +528,32 @@ section[id] {
     color: var(--rule-strong);
 }
 
+/* Tutoring intro with rate */
+.tutoring-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-bottom: var(--space-md);
+}
+
+.tutoring-intro > p:first-child {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.tutoring-rate {
+    flex-shrink: 0;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.2rem, 2vw + 0.5rem, 1.75rem);
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+    text-align: right;
+    white-space: nowrap;
+}
+
 /* Tutoring highlight */
 .highlight-box {
     background: var(--bg);
@@ -685,5 +711,14 @@ a:hover {
         flex: none;
         width: 100%;
         max-width: none;
+    }
+
+    .tutoring-intro {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tutoring-rate {
+        text-align: right;
     }
 }
