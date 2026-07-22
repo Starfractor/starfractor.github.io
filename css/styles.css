@@ -308,6 +308,10 @@ section[id] {
     font-size: clamp(0.88rem, 0.85vw + 0.2rem, 0.98rem);
 }
 
+.intro-contact {
+    margin-bottom: var(--space-md);
+}
+
 .page-section p:last-child {
     margin-bottom: 0;
 }
@@ -571,6 +575,68 @@ section[id] {
     font-size: clamp(1.2rem, 2vw + 0.5rem, 1.75rem);
     font-weight: 600;
     color: var(--ink);
+    margin: 0.35em 0 0.5em;
+}
+
+.highlight-box .rate-note {
+    font-size: 0.7em;
+    white-space: nowrap;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: clamp(0.85rem, 1.5vw, 1.25rem);
+    margin: var(--space-md) 0 var(--space-lg);
+}
+
+.pricing-note {
+    margin-bottom: var(--space-sm);
+}
+
+.pricing-policy {
+    margin: var(--space-md) 0 var(--space-lg);
+}
+
+.pricing-policy h3 {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+}
+
+.pricing-policy p {
+    margin-bottom: var(--space-sm);
+    color: #3f3f46;
+    font-size: clamp(0.88rem, 0.85vw + 0.2rem, 0.98rem);
+}
+
+.pricing-policy p:last-child {
+    margin-bottom: 0;
+}
+
+#pst-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.92em;
+}
+
+.pricing-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(0.6rem, 0.7vw, 0.75rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.25em;
+}
+
+.pricing-card p:last-child {
+    margin-bottom: 0;
+    flex-grow: 1;
 }
 
 /* Contact */

@@ -28,16 +28,25 @@
                 computer programming, mathematics, and other STEM-related fields. Whether you need help with a
                 class or want to explore a topic on your own, I'd love to work with you.
             </p>
+            <p class="intro-contact">
+                For direct booking, please email me at
+                <a href="mailto:stellenicholas@gmail.com">stellenicholas@gmail.com</a>
+                or text me at
+                <a href="tel:+19493543101">(949) 354-3101</a>.
+                You can also reach me through
+                <a href="https://www.wyzant.com/Tutors/nicholck" target="_blank" rel="noopener noreferrer">Wyzant</a>.
+            </p>
 
-            <div class="highlight-box tutoring-details">
-                <h3>Session Details</h3>
-                <ul>
-                    <li><span class="rate">$50/hour</span></li>
-                    <li><strong>Remote tutoring available</strong> — sessions via video call from anywhere</li>
-                    <li>Open for class help and personal-interest learning</li>
-                    <li><strong>Email:</strong> <a href="mailto:nicholck.king@gmail.com">nicholck.king@gmail.com</a></li>
-                </ul>
-            </div>
+            <h3>Subjects</h3>
+            <ul>
+                <li>Machine Learning &amp; Artificial Intelligence</li>
+                <li>Computer Programming (Python, Java, and more)</li>
+                <li>Software Engineering</li>
+                <li>Data Science</li>
+                <li>Mathematics</li>
+                <li>Physics</li>
+                <li>STEM</li>
+            </ul>
 
             <h3>Teaching Approach</h3>
             <p>
@@ -54,28 +63,78 @@
                 tailor my methods to fit each individual's learning style and pace.
             </p>
 
-            <h3>Subjects</h3>
+            <h3>Pricing</h3>
+            <p class="pricing-note">
+                Most students meet once a week. Each session is one hour, and sessions can be split up or
+                combined to fit your schedule. For direct booking and the 4-hour bundle, pay via Venmo or Zelle.
+            </p>
+            <div class="pricing-grid">
+                <div class="highlight-box pricing-card">
+                    <h4>Direct Booking</h4>
+                    <p class="rate">$60/hour</p>
+                    <p>One-hour minimum per session. Billed in 15-minute increments at the hourly rate.</p>
+                </div>
+                <div class="highlight-box pricing-card">
+                    <h4>4-Hour Bundle</h4>
+                    <p class="rate">$180 <span class="rate-note">($45/hour)</span></p>
+                    <p>Four hours of tutoring time, paid upfront as a single package.</p>
+                </div>
+                <div class="highlight-box pricing-card">
+                    <h4>Wyzant</h4>
+                    <p class="rate">$80/hour</p>
+                    <p>Contact and scheduling are handled through Wyzant. The rate is higher due to platform fees.</p>
+                </div>
+            </div>
+
+            <h3>Payment Methods</h3>
             <ul>
-                <li>Machine Learning &amp; Artificial Intelligence</li>
-                <li>Computer Programming (Python, Java, and more)</li>
-                <li>Software Engineering</li>
-                <li>Data Science</li>
-                <li>Mathematics</li>
-                <li>Physics</li>
-                <li>STEM</li>
+                <li><strong>Venmo:</strong> <a href="https://venmo.com/u/nicholas-stelle" target="_blank" rel="noopener noreferrer">@nicholas-stelle</a></li>
+                <li><strong>Zelle:</strong> <a href="mailto:stellenicholas@gmail.com">stellenicholas@gmail.com</a></li>
             </ul>
 
-            <div class="cta-section">
-                <p>Interested in working together? I'd love to hear from you.</p>
-                <p>
-                    <a href="mailto:nicholck.king@gmail.com">nicholck.king@gmail.com</a>
-                    &nbsp;|&nbsp;
-                    <a href="https://www.wyzant.com/Tutors/nicholck" target="_blank" rel="noopener noreferrer">Wyzant Profile</a>
-                    &nbsp;|&nbsp;
-                    <a href="https://www.linkedin.com/in/stellenicholas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </p>
+            <div class="pricing-policy">
+                <h3>Session Detail</h3>
+                <p><strong>Sessions via Zoom:</strong> Remote tutoring from anywhere.</p>
+                <p><strong>Scheduling:</strong> All times are in Pacific Standard Time (Currently: <time id="pst-time"></time>)</p>
+                <p><strong>Lesson cancellation:</strong> You can reschedule or cancel a session up to 24 hours before the lesson starts. If you change with less than 24 hours notice, you will be charged for one hour of the agreed-upon rate for your lesson.</p>
+            </div>
+
+            <div class="highlight-box tutoring-details">
+                <h3>Contact</h3>
+                <ul>
+                    <li>
+                        <strong>Email:</strong> <a href="mailto:stellenicholas@gmail.com">stellenicholas@gmail.com</a><br>
+                        <strong>Text:</strong> <a href="tel:+19493543101">(949) 354-3101</a>
+                    </li>
+                    <li><strong>Wyzant:</strong>
+                        <a href="https://www.wyzant.com/Tutors/nicholck" target="_blank" rel="noopener noreferrer">wyzant.com/Tutors/nicholck</a>
+                    </li>
+                    <li><strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/stellenicholas/" target="_blank" rel="noopener noreferrer">linkedin.com/in/stellenicholas</a>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>
+    <script>
+        (function () {
+            const pstEl = document.getElementById('pst-time');
+            if (!pstEl) return;
+
+            function updateTime() {
+                const now = new Date();
+                pstEl.textContent = new Intl.DateTimeFormat('en-US', {
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    timeZone: 'America/Los_Angeles',
+                    timeZoneName: 'short',
+                }).format(now);
+                pstEl.dateTime = now.toISOString();
+            }
+
+            updateTime();
+            setInterval(updateTime, 60000);
+        })();
+    </script>
 </body>
 </html>
