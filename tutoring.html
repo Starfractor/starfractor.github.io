@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutoring - Nicholas King</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 
 <body>
@@ -40,7 +41,7 @@
             <h3>Subjects</h3>
             <ul>
                 <li>Machine Learning &amp; Artificial Intelligence</li>
-                <li>Computer Programming (Python, Java, and more)</li>
+                <li>Computer Programming (Python, C/C++, Java, and more)</li>
                 <li>Software Engineering</li>
                 <li>Data Science</li>
                 <li>Mathematics</li>
@@ -72,7 +73,7 @@
                 <div class="highlight-box pricing-card">
                     <h4>Direct Booking</h4>
                     <p class="rate">$60/hour</p>
-                    <p>One-hour minimum per session. Billed in 15-minute increments at the hourly rate.</p>
+                    <p> One-hour minimum per session. I bill in 5-minute increments at the hourly rate afterwards.</p>
                 </div>
                 <div class="highlight-box pricing-card">
                     <h4>4-Hour Bundle</h4>
@@ -86,6 +87,30 @@
                 </div>
             </div>
 
+            <h3>In-Person Sessions</h3>
+            <div class="highlight-box">
+                <p>
+                    I offer in-person tutoring for students who prefer meeting face-to-face. The hourly
+                    rate stays the same, with an additional <strong>$20 fee</strong> per in-person
+                    session (Ex. for 2 hours: 2 × $60/hour + $20 = $140).
+                </p>
+                <p>
+                    Availability and meeting location depend on scheduling. If you are interested in
+                    in-person tutoring, email or text me and we can discuss whether it is a good fit.
+                </p>
+                <div class="tutor-location" id="tutor-location">
+                    <p class="location-summary">
+                        <strong>General area:</strong>
+                        <span id="location-city">Loading…</span>
+                    </p>
+                    <div class="location-map-links" id="location-map-links" hidden>
+                        <a id="location-google-maps" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                        <a id="location-apple-maps" href="#" target="_blank" rel="noopener noreferrer">Open in Apple Maps</a>
+                    </div>
+                    <div id="location-map" class="location-map" role="img" aria-label="Map showing a 10-mile radius around the general tutoring area"></div>
+                </div>
+            </div>
+
             <h3>Payment Methods</h3>
             <ul>
                 <li><strong>Venmo:</strong> <a href="https://venmo.com/u/nicholas-stelle" target="_blank" rel="noopener noreferrer">@nicholas-stelle</a></li>
@@ -94,7 +119,8 @@
 
             <div class="pricing-policy">
                 <h3>Session Detail</h3>
-                <p><strong>Sessions via Zoom or Google Meet:</strong> Remote tutoring from anywhere.</p>
+                <p><strong>Remote sessions via Zoom or Google Meet:</strong> Online tutoring from anywhere.</p>
+                <p><strong>In-person sessions:</strong> Available for interested students; the hourly rate is unchanged, with a $20 fee added per session (see above).</p>
                 <p><strong>Scheduling:</strong> All times are in Pacific Standard Time (Currently: <time id="pst-time"></time>)</p>
                 <p><strong>Lesson cancellation:</strong> You can reschedule or cancel a session up to 24 hours before the lesson starts. If you change with less than 24 hours notice, you will be charged for one hour of the agreed-upon rate for your lesson.</p>
             </div>
@@ -116,6 +142,7 @@
             </div>
         </section>
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
         (function () {
             const pstEl = document.getElementById('pst-time');
@@ -134,6 +161,73 @@
 
             updateTime();
             setInterval(updateTime, 60000);
+        })();
+
+        (function () {
+            // Change this zip when you move — city, map, and map links update automatically.
+            const TUTOR_ZIP = '94040';
+            const TUTOR_RADIUS_MILES = 10;
+
+            const locationRoot = document.getElementById('tutor-location');
+            const cityEl = document.getElementById('location-city');
+            const mapEl = document.getElementById('location-map');
+            const googleMapsEl = document.getElementById('location-google-maps');
+            const appleMapsEl = document.getElementById('location-apple-maps');
+            const mapLinksEl = document.getElementById('location-map-links');
+            if (!locationRoot || !cityEl || !mapEl) return;
+
+            const zip = TUTOR_ZIP;
+            const radiusMiles = TUTOR_RADIUS_MILES;
+
+            async function initLocation() {
+                try {
+                    const response = await fetch(`https://api.zippopotam.us/us/${encodeURIComponent(zip)}`);
+                    if (!response.ok) throw new Error('zip lookup failed');
+
+                    const data = await response.json();
+                    const place = data.places[0];
+                    const lat = Number(place.latitude);
+                    const lng = Number(place.longitude);
+                    const cityLabel = `${place['place name']}, ${place['state abbreviation']} ${zip}`;
+
+                    cityEl.textContent = cityLabel;
+
+                    if (googleMapsEl) {
+                        googleMapsEl.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cityLabel)}`;
+                    }
+
+                    if (appleMapsEl) {
+                        appleMapsEl.href = `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(cityLabel)}`;
+                    }
+
+                    if (mapLinksEl && (googleMapsEl || appleMapsEl)) {
+                        mapLinksEl.hidden = false;
+                    }
+
+                    const map = L.map(mapEl, { scrollWheelZoom: false }).setView([lat, lng], 11);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 18,
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                    }).addTo(map);
+
+                    const radiusMeters = radiusMiles * 1609.344;
+                    const areaCircle = L.circle([lat, lng], {
+                        radius: radiusMeters,
+                        color: '#52525b',
+                        fillColor: '#71717a',
+                        fillOpacity: 0.18,
+                        weight: 2,
+                    }).addTo(map);
+
+                    map.fitBounds(areaCircle.getBounds(), { padding: [20, 20] });
+                    setTimeout(function () { map.invalidateSize(); }, 0);
+                } catch (error) {
+                    cityEl.textContent = `ZIP ${zip}`;
+                    mapEl.innerHTML = '<p class="location-error">Map unavailable right now.</p>';
+                }
+            }
+
+            initLocation();
         })();
     </script>
 </body>

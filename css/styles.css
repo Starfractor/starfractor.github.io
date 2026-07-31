@@ -639,6 +639,47 @@ section[id] {
     flex-grow: 1;
 }
 
+.tutor-location {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--rule);
+}
+
+.location-summary {
+    margin-bottom: var(--space-xs);
+    color: #3f3f46;
+}
+
+.location-map-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    margin-bottom: var(--space-sm);
+    font-size: clamp(0.88rem, 0.85vw + 0.2rem, 0.98rem);
+}
+
+.location-map-links a {
+    width: fit-content;
+}
+
+.location-map {
+    height: clamp(14rem, 42vw, 22rem);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.location-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
 /* Contact */
 .contact-grid {
     display: flex;
